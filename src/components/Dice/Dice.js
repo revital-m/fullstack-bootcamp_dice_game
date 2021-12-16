@@ -1,11 +1,10 @@
 import React, { Component } from "react";
+import "./Dice.css";
 
 class Dice extends Component {
   render() {
     return (
-      <div className="dice">
-          <img className="dice--img" src={this.props.diceSrc} alt="Dice"></img>
-      </div>
+      <div className={`dice dice--img${this.props.numRooled}`}></div>
     );
   }
 }

@@ -5,7 +5,6 @@ import GameBoard from "./components/GameBoard";
 
 
 class App extends Component {
-  state = {  };
 
   render() {
     return (
