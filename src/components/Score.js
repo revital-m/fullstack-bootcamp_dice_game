@@ -1,0 +1,18 @@
+import React, { Component } from "react";
+
+class Score extends Component {
+  isText = () => {
+    return this.props.scoreText ? <p>{this.props.scoreText}</p> : <></>;
+  };
+
+  render() {
+    return (
+      <div className="score-container">
+        {this.isText()}
+        <p>{this.props.scoreNum}</p>
+      </div>
+    );
+  }
+}
+
+export default Score;
