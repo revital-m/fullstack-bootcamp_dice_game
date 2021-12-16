@@ -5,7 +5,7 @@ import Player from "./Player";
 class GameBoard extends Component {
   state = {
     pointsToWin: 100,
-    dices: [1, 3],
+    dices: [7, 7],
     playersTurn: 0,
     winner: false,
     currentScore0: 0,
@@ -25,30 +25,45 @@ class GameBoard extends Component {
       case "hold":
         this.handleHold();
         break;
-        default:
-          break;
+      default:
+        break;
     }
   };
 
   handleChange = (e) => {
-    // console.log(e.target.value );
     this.setState({ pointsToWin: e.target.value });
   };
 
+  // starting a new game, reset state.
   handleNewGame = () => {
-    // starting a new game, reset state.
+    this.setState({
+      pointsToWin: 100,
+      dices: [7, 7],
+      playersTurn: 0,
+      winner: false,
+      currentScore0: 0,
+      currentScore1: 0,
+      totalScore0: 0,
+      totalScore1: 0,
+    });
   };
 
   // pick 2 random numbers beetwen 1-6, update state.dices with the numbers, update state.players-currentScore with the sum of the numbers to the current player.
   handleRollDice = () => {
-    const dice1 = Math.floor(Math.random() *6) + 1;
-    const dice2 = Math.floor(Math.random() *6) + 1;
+    const dice1 = Math.floor(Math.random() * 6) + 1;
+    const dice2 = Math.floor(Math.random() * 6) + 1;
     const diceSum = dice1 + dice2;
     this.setState((state) => {
       if (state.playersTurn) {
-        return {currentScore1: state.currentScore1 + diceSum , dices: [dice1,dice2]};
+        return {
+          currentScore1: state.currentScore1 + diceSum,
+          dices: [dice1, dice2],
+        };
       }
-      return {currentScore0:  state.currentScore0 + diceSum , dices: [dice1,dice2]};
+      return {
+        currentScore0: state.currentScore0 + diceSum,
+        dices: [dice1, dice2],
+      };
     });
   };
 
@@ -56,9 +71,17 @@ class GameBoard extends Component {
   handleHold = () => {
     this.setState((state) => {
       if (state.playersTurn) {
-        return {totalScore1: state.totalScore1 + state.currentScore1 , currentScore1: 0, playersTurn:0};
+        return {
+          totalScore1: state.totalScore1 + state.currentScore1,
+          currentScore1: 0,
+          playersTurn: 0,
+        };
       }
-      return {totalScore0: state.totalScore0 + state.currentScore0 , currentScore0: 0, playersTurn:1};
+      return {
+        totalScore0: state.totalScore0 + state.currentScore0,
+        currentScore0: 0,
+        playersTurn: 1,
+      };
     });
   };
 
@@ -73,7 +96,9 @@ class GameBoard extends Component {
           scoreTextTotal=""
           scoreNumTotal={idx ? this.state.totalScore1 : this.state.totalScore0}
           scoreTextCurrent="Current"
-          scoreNumCurrent={idx ? this.state.currentScore1 : this.state.currentScore0}
+          scoreNumCurrent={
+            idx ? this.state.currentScore1 : this.state.currentScore0
+          }
         />
       );
     });
