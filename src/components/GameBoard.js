@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import GameData from "./GameData";
 import Player from "./Player";
+import Title from "./Title";
 
 class GameBoard extends Component {
   state = {
     pointsToWin: 100,
     dices: [7, 7],
     playersTurn: 0,
-    winner: false,
+    winner: "",
+    iswin: false,
     currentScore0: 0,
     currentScore1: 0,
     totalScore0: 0,
@@ -40,7 +42,8 @@ class GameBoard extends Component {
       pointsToWin: 100,
       dices: [7, 7],
       playersTurn: 0,
-      winner: false,
+      winner: "",
+      iswin: false,
       currentScore0: 0,
       currentScore1: 0,
       totalScore0: 0,
@@ -71,16 +74,28 @@ class GameBoard extends Component {
   handleHold = () => {
     this.setState((state) => {
       if (state.playersTurn) {
+        const isWinner =
+          state.totalScore1 + state.currentScore1 >= state.pointsToWin
+            ? "Player 2"
+            : "";
         return {
           totalScore1: state.totalScore1 + state.currentScore1,
           currentScore1: 0,
           playersTurn: 0,
+          winner: isWinner,
+          iswin: isWinner ? true : false,
         };
       }
+      const isWinner =
+        state.totalScore0 + state.currentScore0 >= state.pointsToWin
+          ? "Player 1"
+          : "";
       return {
         totalScore0: state.totalScore0 + state.currentScore0,
         currentScore0: 0,
         playersTurn: 1,
+        winner: isWinner,
+        iswin: isWinner ? true : false,
       };
     });
   };
@@ -99,15 +114,24 @@ class GameBoard extends Component {
           scoreNumCurrent={
             idx ? this.state.currentScore1 : this.state.currentScore0
           }
+          iswin={this.state.iswin ? "Winner!" : ""}
+          winner={this.state.winner}
         />
       );
     });
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="game-container">
         {this.creatPlayers()}
+        <Title
+          TitleText={
+            this.state.iswin ? `${this.state.winner} is the winner!` : ``
+          }
+          TitleTextClass={this.state.iswin ? `winner` : ``}
+        />
         <GameData
           value={this.state.pointsToWin}
           numRooled0={this.state.dices[0]}

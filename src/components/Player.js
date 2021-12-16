@@ -6,8 +6,9 @@ class Player extends Component {
   render() {
     return (
         <div className="player-container" name={this.props.playerNum}>
-            <Title playerName={this.props.playerName}/>
+            <Title TitleText={this.props.playerName} TitleTextClass={this.props.playerName}/>
             <Score scoreText={this.props.scoreTextTotal} scoreNum={this.props.scoreNumTotal}/>
+            {/* <Title TitleText={this.props.winner} isWin={this.state.isWin}/> */}
             <Score scoreText={this.props.scoreTextCurrent} scoreNum={this.props.scoreNumCurrent}/>
         </div>
     );

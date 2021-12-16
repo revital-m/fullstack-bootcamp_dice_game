@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 
 class Title extends Component {
+  isText = () => {
+    return this.props.TitleText ? (
+      <h1 className={`${this.props.TitleTextClass}`}>{this.props.TitleText}</h1>
+    ) : (
+      <></>
+    );
+  };
+
   render() {
-    return <h1 className={`${this.props.playerName}`}>{this.props.playerName}</h1>;
+    return <>{this.isText()}</>;
   }
 }
 
