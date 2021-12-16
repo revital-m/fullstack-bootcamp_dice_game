@@ -54,7 +54,12 @@ class GameBoard extends Component {
 
   // update state.players-totalScore with the sum of the numbers to the current player. switch current player
   handleHold = () => {
-    
+    this.setState((state) => {
+      if (state.playersTurn) {
+        return {totalScore1: state.totalScore1 + state.currentScore1 , currentScore1: 0, playersTurn:0};
+      }
+      return {totalScore0: state.totalScore0 + state.currentScore0 , currentScore0: 0, playersTurn:1};
+    });
   };
 
   creatPlayers = () => {
