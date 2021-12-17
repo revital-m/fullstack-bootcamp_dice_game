@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import Title from "./Title";
-import Score from "./Score";
+import './Player.css';
+import Title from "../Title";
+import Score from "../Score";
 
 class Player extends Component {
   render() {
     return (
-        <div className="player-container" name={this.props.playerNum}>
+        <div className={`player-container ${this.props.currentTurn}`} name={this.props.playerNum}>
             <Title TitleText={this.props.playerName} TitleTextClass={this.props.playerName}/>
             <Score scoreText={this.props.scoreTextTotal} scoreNum={this.props.scoreNumTotal}/>
             {/* <Title TitleText={this.props.winner} isWin={this.state.isWin}/> */}

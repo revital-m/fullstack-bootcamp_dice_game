@@ -1,0 +1,17 @@
+.player-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 50vmin;
+  width: 50vmin;
+  box-shadow: 5px 5px 20px gray;
+  border-radius: 10px;
+  padding: 2rem;
+  background: rgb(218, 191, 213);
+}
+
+.current-turn {
+  background: rgb(253, 220, 247);
+  border: 0.5rem solid rgb(141, 141, 141);
+}
