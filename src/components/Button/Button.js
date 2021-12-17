@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './Button.css';
+import "./Button.css";
 
 class Button extends Component {
   render() {
@@ -9,7 +9,10 @@ class Button extends Component {
           className="btn btn--text"
           onClick={this.props.handleClick}
           name={this.props.name}
-        ><i className={`${this.props.icon} btn--icon`}></i>{this.props.btnText}</button>
+        >
+          <i className={`${this.props.icon} btn--icon`}></i>
+          {this.props.btnText}
+        </button>
       </div>
     );
   }

@@ -1,13 +1,7 @@
 .double,
 .winner {
   position: absolute;
-  /* top: 5rem;
-  left: 14rem;
-  width: 64.5vw;
-  height: 51vh; */
   padding: 5rem;
-  /* background: rgb(145, 92, 150);
-  box-shadow: 5px 5px 20px rgb(67, 0, 87); */
   border-radius: 7rem;
   font-size: 4rem;
   text-align: center;
@@ -15,8 +9,8 @@
 
 .double {
   top: 5rem;
-  left: 14rem;
-  width: 64.5vw;
+  left: 16rem;
+  width: 67vw;
   height: 51vh;
   background: rgb(145, 92, 150);
   box-shadow: 5px 5px 20px rgb(67, 0, 87);
@@ -34,11 +28,11 @@
 .winner {
   top: 1.3rem;
   left: 7.3rem;
-  width: 73vw;
+  width: 76vw;
   height: 79vh;
   background: url("./img/dice-winner.jpg") no-repeat center center/cover;
   box-shadow: 5px 5px 20px goldenrod;
-  color: goldenrod;
+  color: #e4ba4f;
 }
 
 .winner > h1 {

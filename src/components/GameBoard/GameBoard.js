@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./GameBoard.css";
 import GameData from "../GameData/GameData";
 import Player from "../Player/Player";
-// import Title from "../Title/Title";
 import Message from "../Message/Message";
 
 class GameBoard extends Component {
@@ -59,7 +58,7 @@ class GameBoard extends Component {
 
   // pick 2 random numbers beetwen 1-6, update state.dices with the numbers.
   handleRollDice = () => {
-    console.log(this.state.isDouble,this.state.isDoubleSix);
+    console.log(this.state.isDouble, this.state.isDoubleSix);
     if (!(this.state.isDouble || this.state.isDoubleSix)) {
       const dice1 = Math.floor(Math.random() * 6) + 1;
       const dice2 = Math.floor(Math.random() * 6) + 1;
@@ -219,24 +218,6 @@ class GameBoard extends Component {
             msgInfo=""
             msgInfoIcon=""
           />
-          {/* <Title
-            TitleText={
-              this.state.isDouble
-                ? `Congratulations you just rolled double, you get another turn!`
-                : `Congratulations you just rolled double, you get another turn!`
-            }
-            TitleTextClass={this.state.isDouble ? `double` : `double`}
-            // TitleText={
-            //   this.state.isDouble ? `Congratulations you just rolled double, you get another turn!` : ``
-            // }
-            // TitleTextClass={this.state.isDouble ? `double` : ``}
-          />
-          <Title
-            TitleText={
-              this.state.iswin ? `${this.state.winner} is the winner!` : ``
-            }
-            TitleTextClass={this.state.iswin ? `winner` : ``}
-          /> */}
         </main>
         <GameData
           value={this.state.pointsToWin}

@@ -3,9 +3,7 @@ import "./Dice.css";
 
 class Dice extends Component {
   render() {
-    return (
-      <div className={`dice dice--img${this.props.numRooled}`}></div>
-    );
+    return <div className={`dice dice--img${this.props.numRooled}`}></div>;
   }
 }
 
