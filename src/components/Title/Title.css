@@ -4,22 +4,3 @@
   color: rgb(45, 0, 75);
   font-size: 7rem;
 }
-
-.double {
-  position: absolute;
-  top: 2.1rem;
-  left: 12.2rem;
-  width: 46vw;
-  padding: 7rem;
-  background: rgb(145, 92, 150);
-  box-shadow: 5px 5px 20px rgb(67, 0, 87);
-  border-radius: 7rem;
-  font-size: 7rem;
-  text-align: center;
-}
-
-/* .winner {
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
