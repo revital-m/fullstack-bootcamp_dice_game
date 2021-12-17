@@ -10,6 +10,7 @@ class GameBoard extends Component {
     playersTurn: 0,
     winner: "",
     iswin: false,
+    isDouble: false,
     currentScore0: 0,
     currentScore1: 0,
     totalScore0: 0,
@@ -75,7 +76,17 @@ class GameBoard extends Component {
     if (dice1 !== dice2) {
       this.handleHold();
     }
+    else {
+      this.handleDouble();
+    }
   };
+
+  handleDouble = () => {
+    this.setState({isDouble: true});
+    setTimeout(() => {
+      this.setState({isDouble: false});
+    }, 1500);
+  }
 
   // reset the current player score and switch current player.
   handleDoubleSix = () => {
@@ -152,6 +163,12 @@ class GameBoard extends Component {
     return (
       <div className="game-container">
         {this.creatPlayers()}
+        <Title
+          TitleText={
+            this.state.isDouble ? `Congratulations you just rolled double you get another turn!` : ``
+          }
+          TitleTextClass={this.state.isDouble ? `double` : ``}
+        />
         <Title
           TitleText={
             this.state.iswin ? `${this.state.winner} is the winner!` : ``
