@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import './GameData.css';
 import Button from "../Button/Button";
 import Dice from "../Dice/Dice";
-import Inputs from "../Inputs";
+import Inputs from "../Inputs/Inputs";
 
 class GameData extends Component {
 
@@ -17,7 +17,7 @@ class GameData extends Component {
           </section>
           <section className="data-container__settings">
             <Button handleClick={this.props.handleClick} name="newGame" icon="fas fa-plus-circle" btnText="New Game"/>
-            <Inputs labelName="Points To Win" handleInputChange={this.props.handleInputChange} inputType="text" name="inputPoints" value={this.props.value}/>
+            <Inputs labelName="Points To Win:" handleInputChange={this.props.handleInputChange} inputType="text" name="inputPoints" value={this.props.value}/>
           </section>
       </div>
     );
