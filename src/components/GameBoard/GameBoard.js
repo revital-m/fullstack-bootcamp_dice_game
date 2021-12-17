@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import GameData from "./GameData";
-import Player from "./Player/Player";
-import Title from "./Title";
+import './GameBoard.css';
+import GameData from "../GameData";
+import Player from "../Player/Player";
+import Title from "../Title";
 
 class GameBoard extends Component {
   state = {
@@ -195,6 +196,7 @@ class GameBoard extends Component {
   render() {
     return (
       <div className="game-container">
+        <main className="game-container__players">
         {this.creatPlayers()}
         <Title
           TitleText={
@@ -208,6 +210,7 @@ class GameBoard extends Component {
           }
           TitleTextClass={this.state.iswin ? `winner` : ``}
         />
+        </main>
         <GameData
           value={this.state.pointsToWin}
           numRooled0={this.state.dices[0]}
