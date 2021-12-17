@@ -1,0 +1,11 @@
+.score-container {
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem;
+  width: 100%;
+  background: rgba(67, 0, 87, 0.637);
+  border: 0.5rem solid rgba(67, 0, 87, 0.788);
+  border-radius: 1rem;
+  font-size: 5rem;
+  color: rgb(197, 197, 197);
+}

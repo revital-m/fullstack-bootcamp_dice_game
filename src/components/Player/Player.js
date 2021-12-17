@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './Player.css';
 import Title from "../Title/Title";
-import Score from "../Score";
+import Score from "../Score/Score";
 
 class Player extends Component {
   render() {
