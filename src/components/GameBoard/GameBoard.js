@@ -180,12 +180,14 @@ class GameBoard extends Component {
           currentTurn={idx === this.state.playersTurn ? "current-turn" : ""}
           playerNum={idx}
           playerName={player}
-          scoreTextTotal=""
+          scoreTextTotal="Total:"
           scoreNumTotal={idx ? this.state.totalScore1 : this.state.totalScore0}
-          scoreTextCurrent="Current"
+          scoreTotalClass= "score-container--total"
+          scoreTextCurrent="Current:"
           scoreNumCurrent={
             idx ? this.state.currentScore1 : this.state.currentScore0
           }
+          scoreCurrentClass="score-container--current"
           iswin={this.state.iswin ? "Winner!" : ""}
           winner={this.state.winner}
         />

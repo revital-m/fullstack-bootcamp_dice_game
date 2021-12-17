@@ -8,7 +8,7 @@ class Score extends Component {
 
   render() {
     return (
-      <div className="score-container">
+      <div className={`score-container ${this.props.scoreClass}`}>
         {this.isText()}
         <p>{this.props.scoreNum}</p>
       </div>

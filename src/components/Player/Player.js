@@ -8,9 +8,9 @@ class Player extends Component {
     return (
         <div className={`player-container ${this.props.currentTurn}`} name={this.props.playerNum}>
             <Title TitleText={this.props.playerName} TitleTextClass={this.props.playerName}/>
-            <Score scoreText={this.props.scoreTextTotal} scoreNum={this.props.scoreNumTotal}/>
+            <Score scoreText={this.props.scoreTextTotal} scoreNum={this.props.scoreNumTotal} scoreClass={this.props.scoreTotalClass}/>
             {/* <Title TitleText={this.props.winner} isWin={this.state.isWin}/> */}
-            <Score scoreText={this.props.scoreTextCurrent} scoreNum={this.props.scoreNumCurrent}/>
+            <Score scoreText={this.props.scoreTextCurrent} scoreNum={this.props.scoreNumCurrent} scoreClass={this.props.scoreCurrentClass}/>
         </div>
     );
   }
