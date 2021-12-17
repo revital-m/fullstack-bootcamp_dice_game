@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './GameBoard.css';
-import GameData from "../GameData";
+import GameData from "../GameData/GameData";
 import Player from "../Player/Player";
 import Title from "../Title/Title";
 

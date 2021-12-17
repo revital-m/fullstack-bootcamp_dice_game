@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Button from "./Button";
-import Dice from "./Dice/Dice";
-import Inputs from "./Inputs";
+import './GameData.css';
+import Button from "../Button";
+import Dice from "../Dice/Dice";
+import Inputs from "../Inputs";
 
 class GameData extends Component {
 
