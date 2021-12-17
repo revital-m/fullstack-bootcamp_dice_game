@@ -3,12 +3,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .data-container__dices,
 .data-container__settings {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  /* margin: 1rem; */
+  width: 100%;
+}
+
+.data-container__settings {
+  display: flex;
+  /* justify-content: space-between; */
   align-items: center;
   margin: 1rem;
+}
+
+.data-container__dices-container {
+  display: flex;
+  /* flex-direction: row; */
 }

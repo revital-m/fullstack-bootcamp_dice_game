@@ -15,8 +15,10 @@ class GameData extends Component {
             icon="fas fa-dice"
             btnText="Roll Dice"
           />
-          <Dice numRooled={this.props.numRooled0} />
-          <Dice numRooled={this.props.numRooled1} />
+          <div className="data-container__dices-container">
+            <Dice numRooled={this.props.numRooled0} />
+            <Dice numRooled={this.props.numRooled1} />
+          </div>
           <Button
             handleClick={this.props.handleClick}
             name="hold"
@@ -25,18 +27,18 @@ class GameData extends Component {
           />
         </section>
         <section className="data-container__settings">
-          <Button
-            handleClick={this.props.handleClick}
-            name="newGame"
-            icon="fas fa-plus-circle"
-            btnText="New Game"
-          />
           <Inputs
             labelName="Points To Win:"
             handleInputChange={this.props.handleInputChange}
             inputType="text"
             name="inputPoints"
             value={this.props.value}
+          />
+          <Button
+            handleClick={this.props.handleClick}
+            name="newGame"
+            icon="fas fa-plus-circle"
+            btnText="New Game"
           />
         </section>
       </div>

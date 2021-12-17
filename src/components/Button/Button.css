@@ -1,6 +1,7 @@
 .btn {
   cursor: pointer;
-  margin: 1rem;
+  /* margin: 1rem; */
+  margin: 1rem 5rem;
   padding: 1rem;
   font-size: 3rem;
   font-weight: bold;

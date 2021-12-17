@@ -66,7 +66,7 @@ class GameBoard extends Component {
       this.setState({ dices: [dice1, dice2] });
       setTimeout(() => {
         this.resRollDice(dice1, dice2, diceSum);
-      }, 500);
+      }, 1500);
     }
   };
 
