@@ -1,14 +1,13 @@
 .player-container {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   height: 60vmin;
   width: 60vmin;
   box-shadow: 0.5rem 0.5rem 2rem gray;
   border-radius: 1rem;
   padding: 2rem;
-  margin: 2rem;
+  margin: 2rem 7.5rem 2rem 11rem;
   background: rgb(218, 191, 213);
 }
 

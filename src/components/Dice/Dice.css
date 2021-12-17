@@ -1,7 +1,11 @@
 .dice {
   height: 10vmin;
   width: 10vmin;
-  border: 1px solid black;
+  border: 0.3rem solid #22072a;
+  background: #22072a;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: 1rem;
 }
 
 .dice--img1 {
