@@ -7,7 +7,7 @@ import Message from "../Message/Message";
 class GameBoard extends Component {
   state = {
     pointsToWin: 100,
-    dices: [7, 7],
+    dices: [0, 0],
     playersTurn: 0,
     winner: "",
     iswin: false,
@@ -43,7 +43,7 @@ class GameBoard extends Component {
   handleNewGame = () => {
     this.setState({
       pointsToWin: 100,
-      dices: [7, 7],
+      dices: [0, 0],
       playersTurn: 0,
       winner: "",
       iswin: false,
@@ -58,7 +58,6 @@ class GameBoard extends Component {
 
   // pick 2 random numbers beetwen 1-6, update state.dices with the numbers.
   handleRollDice = () => {
-    console.log(this.state.isDouble, this.state.isDoubleSix);
     if (!(this.state.isDouble || this.state.isDoubleSix)) {
       const dice1 = Math.floor(Math.random() * 6) + 1;
       const dice2 = Math.floor(Math.random() * 6) + 1;
