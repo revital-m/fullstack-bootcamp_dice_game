@@ -56,6 +56,10 @@ class GameBoard extends Component {
     const dice1 = Math.floor(Math.random() * 6) + 1;
     const dice2 = Math.floor(Math.random() * 6) + 1;
     const diceSum = dice1 + dice2;
+    if (dice1 === 6 && dice2 === 6) {
+      this.handleDoubleSix();
+      return;
+    }
     this.setState((state) => {
       if (state.playersTurn) {
         return {
@@ -66,6 +70,29 @@ class GameBoard extends Component {
       return {
         currentScore0: state.currentScore0 + diceSum,
         dices: [dice1, dice2],
+      };
+    });
+    if (dice1 !== dice2) {
+      this.handleHold();
+    }
+  };
+
+  // reset the current player score and switch current player.
+  handleDoubleSix = () => {
+    this.setState((state) => {
+      if (state.playersTurn) {
+        return {
+          currentScore1: 0,
+          totalScore1: 0,
+          dices: [6, 6],
+          playersTurn: 0,
+        };
+      }
+      return {
+        currentScore0: 0,
+        totalScore0: 0,
+        dices: [6, 6],
+        playersTurn: 1,
       };
     });
   };
@@ -122,7 +149,6 @@ class GameBoard extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="game-container">
         {this.creatPlayers()}
