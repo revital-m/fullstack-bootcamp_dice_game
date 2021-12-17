@@ -3,7 +3,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2rem;
+  margin: 0.5rem;
+  background: rgba(185, 185, 185, 0.719);
+  border: 0.5rem solid #22072a;
 }
 
 .game-container__players {

@@ -48,6 +48,8 @@ class GameBoard extends Component {
       playersTurn: 0,
       winner: "",
       iswin: false,
+      isDouble: false,
+      isDoubleSix: false,
       currentScore0: 0,
       currentScore1: 0,
       totalScore0: 0,
@@ -57,14 +59,17 @@ class GameBoard extends Component {
 
   // pick 2 random numbers beetwen 1-6, update state.dices with the numbers.
   handleRollDice = () => {
-    const dice1 = Math.floor(Math.random() * 6) + 1;
-    const dice2 = Math.floor(Math.random() * 6) + 1;
-    const diceSum = dice1 + dice2;
+    console.log(this.state.isDouble,this.state.isDoubleSix);
+    if (!(this.state.isDouble || this.state.isDoubleSix)) {
+      const dice1 = Math.floor(Math.random() * 6) + 1;
+      const dice2 = Math.floor(Math.random() * 6) + 1;
+      const diceSum = dice1 + dice2;
 
-    this.setState({ dices: [dice1, dice2] });
-    setTimeout(() => {
-      this.resRollDice(dice1, dice2, diceSum);
-    }, 500);
+      this.setState({ dices: [dice1, dice2] });
+      setTimeout(() => {
+        this.resRollDice(dice1, dice2, diceSum);
+      }, 500);
+    }
   };
 
   // update state.players-currentScore with the sum of the numbers to the current player.
@@ -100,25 +105,27 @@ class GameBoard extends Component {
 
   // reset the current player score and switch current player.
   handleDoubleSix = () => {
-    this.setState((state) => {
-      if (state.playersTurn) {
+    if (!(this.state.isDouble || this.state.isDoubleSix)) {
+      this.setState((state) => {
+        if (state.playersTurn) {
+          return {
+            currentScore1: 0,
+            totalScore1: 0,
+            playersTurn: 0,
+            isDoubleSix: true,
+          };
+        }
         return {
-          currentScore1: 0,
-          totalScore1: 0,
-          playersTurn: 0,
-          isDoubleSix:true,
+          currentScore0: 0,
+          totalScore0: 0,
+          playersTurn: 1,
+          isDoubleSix: true,
         };
-      }
-      return {
-        currentScore0: 0,
-        totalScore0: 0,
-        playersTurn: 1,
-        isDoubleSix:true,
-      };
-    });
-    setTimeout(() => {
-      this.setState({ isDoubleSix: false });
-    }, 1800);
+      });
+      setTimeout(() => {
+        this.setState({ isDoubleSix: false });
+      }, 1800);
+    }
   };
 
   // update state.players-totalScore with the sum of the numbers to the current player. switch current player
@@ -195,11 +202,11 @@ class GameBoard extends Component {
           <Message
             msgClass={this.state.isDoubleSix ? `double` : ``}
             msgTitle={
-              this.state.isDoubleSix
-                ? `Oh no! you just rolled double 6...`
-                : ``
+              this.state.isDoubleSix ? `Oh no! you just rolled double 6...` : ``
             }
-            msgTitleIcon={this.state.isDoubleSix ? `fas fa-skull-crossbones` : ``}
+            msgTitleIcon={
+              this.state.isDoubleSix ? `fas fa-skull-crossbones` : ``
+            }
             msgInfo=""
             msgInfoIcon=""
           />
@@ -208,9 +215,7 @@ class GameBoard extends Component {
             msgTitle={
               this.state.iswin ? `${this.state.winner} is the winner!` : ``
             }
-            msgTitleIcon={
-              this.state.iswin ? `fas fa-trophy` : ``
-            }
+            msgTitleIcon={this.state.iswin ? `fas fa-trophy` : ``}
             msgInfo=""
             msgInfoIcon=""
           />
