@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import './GameBoard.css';
 import GameData from "../GameData";
 import Player from "../Player/Player";
-import Title from "../Title";
+import Title from "../Title/Title";
 
 class GameBoard extends Component {
   state = {
@@ -172,7 +172,7 @@ class GameBoard extends Component {
 
   // create the Player components.
   creatPlayers = () => {
-    const playersArr = ["Player 1", "Player 2"];
+    const playersArr = ["Player-1", "Player-2"];
     return playersArr.map((player, idx) => {
       return (
         <Player
@@ -200,7 +200,7 @@ class GameBoard extends Component {
         {this.creatPlayers()}
         <Title
           TitleText={
-            this.state.isDouble ? `Congratulations you just rolled double you get another turn!` : ``
+            this.state.isDouble ? `Congratulations you just rolled double, you get another turn!` : ``
           }
           TitleTextClass={this.state.isDouble ? `double` : ``}
         />

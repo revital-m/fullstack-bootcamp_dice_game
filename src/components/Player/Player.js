@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './Player.css';
-import Title from "../Title";
+import Title from "../Title/Title";
 import Score from "../Score";
 
 class Player extends Component {
