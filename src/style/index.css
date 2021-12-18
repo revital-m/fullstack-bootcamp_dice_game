@@ -1,14 +1,39 @@
 body {
   font-family: "Shalimar", cursive;
-  /* margin: 0; */
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */
+@media (max-width: 500px) {
+  html {
+    font-size: 35%;
+  }
+
+  .game-container__players {
+    flex-direction: column;
+  }
+
+  .score-container {
+    margin: 1rem;
+    padding: 1rem;
+    width: max-content;
+    font-size: 3rem;
+  }
+
+  .player-container {
+    height: 10vmin;
+  }
+
+  .current-turn {
+    background: rgb(253, 220, 247);
+    border: 0.5rem solid rgb(141, 141, 141);
+    height: 60vmin;
+  }
+
+  .btn {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}

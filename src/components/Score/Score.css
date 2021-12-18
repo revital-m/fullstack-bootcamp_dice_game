@@ -5,25 +5,17 @@
   margin: 1rem;
   padding: 2rem;
   width: 80%;
-  /* background: rgba(67, 0, 87, 0.637);
-  border: 0.5rem solid rgba(67, 0, 87, 0.788); */
   border-radius: 1rem;
   font-size: 5rem;
-  /* color: rgb(197, 197, 197); */
+  color: rgb(197, 197, 197);
 }
 
 .score-container--total {
   background: #3a0c47bd;
   border: 0.5rem solid #3a0c47;
-  /* background: #2e0a38ab;
-  border: 0.5rem solid #2e0a38; */
-  color: rgb(197, 197, 197);
 }
 
 .score-container--current {
   background: #22072ab9;
   border: 0.5rem solid #22072a;
-  /* background: rgba(67, 0, 87, 0.61);
-  border: 0.5rem solid rgba(67, 0, 87, 0.788); */
-  color: rgb(197, 197, 197);
 }

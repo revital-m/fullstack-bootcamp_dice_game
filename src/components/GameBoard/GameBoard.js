@@ -87,7 +87,9 @@ class GameBoard extends Component {
       };
     });
     if (dice1 !== dice2) {
-      this.handleHold();
+      setTimeout(() => {
+        this.handleHold();
+      }, 800);
     } else {
       this.handleDouble();
     }
@@ -134,24 +136,28 @@ class GameBoard extends Component {
           state.totalScore1 + state.currentScore1 >= state.pointsToWin
             ? "Player 2"
             : "";
+        setTimeout(() => {
+          this.setState({ iswin: isWinner ? true : false });
+        }, 800);
         return {
           totalScore1: state.totalScore1 + state.currentScore1,
           currentScore1: 0,
           playersTurn: 0,
           winner: isWinner,
-          iswin: isWinner ? true : false,
         };
       }
       const isWinner =
         state.totalScore0 + state.currentScore0 >= state.pointsToWin
           ? "Player 1"
           : "";
+      setTimeout(() => {
+        this.setState({ iswin: isWinner ? true : false });
+      }, 800);
       return {
         totalScore0: state.totalScore0 + state.currentScore0,
         currentScore0: 0,
         playersTurn: 1,
         winner: isWinner,
-        iswin: isWinner ? true : false,
       };
     });
   };

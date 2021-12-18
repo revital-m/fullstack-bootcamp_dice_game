@@ -9,6 +9,7 @@
   padding: 2rem;
   margin: 1rem 5rem;
   background: rgb(218, 191, 213);
+  overflow: hidden;
 }
 
 .current-turn {
